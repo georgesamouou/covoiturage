@@ -8,10 +8,9 @@ import { Octicons,MaterialCommunityIcons } from '@expo/vector-icons';
 const HeaderMain = () => {
   return (
     <View style={styles.container}>
-        {/* <TouchableOpacity style={styles.btn}>
+        <TouchableOpacity style={styles.btn}>
           <Octicons name="three-bars" size={24} color="black" />
-        </TouchableOpacity> */}
-        <Profil notification = {1}/>
+        </TouchableOpacity>
         <Profil notification = {1}/>
     </View>
   );
