@@ -1,13 +1,17 @@
 import React, {useState} from 'react';
-import { View,Text,StyleSheet,TextInput, Pressable,Image } from 'react-native';
+import { View,Text,StyleSheet,TextInput, Pressable,Image, TouchableOpacity } from 'react-native';
 import { FontAwesome,Feather,FontAwesome5 } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 //import RadioGroup from 'react-native-radio-buttons-group';
 // import Checkbox from 'expo-checkbox';
 
 // import { Container } from './styles';
 
-export const LoginScreen = () => {
+export const LoginScreen = ({navigation}) => {
   const [isChecked, setChecked] = useState(false);
+  const [password, setPassword] = useState('');  
+  const [isPasswordSecure, setIsPasswordSecure] = useState(true);
+  const handleSecurity = ()=>setIsPasswordSecure(!isPasswordSecure)
   return (
     <View style={{flex:1, width: "100%",backgroundColor:"white"}}>
       <Text style={styles.login}>Login</Text>
@@ -22,17 +26,25 @@ export const LoginScreen = () => {
         <View style={styles.container}>
             <Feather name="lock" size={24} color="black" style={styles.icon}/>
             <TextInput
-            style={styles.input}
-            placeholder="Password"
+              style={styles.input}
+              placeholder="Password"
+              secureTextEntry={isPasswordSecure}
+
             />
-            <FontAwesome5 name="eye" size={24} color="black" style={styles.lock}/>
+            {isPasswordSecure?
+              
+              <Ionicons name="md-eye-off-outline"  onPress={handleSecurity} size={24} style={styles.lock} color="black" />:
+              <FontAwesome5 name="eye" onPress={handleSecurity} size={24} color="black" style={styles.lock}/>
+            }
+
         </View>
         
-        <Pressable style={styles.btn}>
+        <TouchableOpacity onPress={()=>navigation.navigate('main')} style={styles.btn}>
             <Text style={styles.btnTxt}>Login</Text>
-        </Pressable>
-        
-        <Text style={styles.forget}>create Account</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.navigate('signup')}>
+          <Text onPress={()=>navigation.navigate('signup')} style={styles.forget}>create Account</Text>
+        </TouchableOpacity>
         <View style={styles.social}>
             <FontAwesome
             name = "facebook"
@@ -177,7 +189,7 @@ const styles = StyleSheet.create({
     },
     forget:{
       alignSelf:"flex-end",
-      margin:15,
+      margin:5,
       color:"#0386D0"
     },
     social:{

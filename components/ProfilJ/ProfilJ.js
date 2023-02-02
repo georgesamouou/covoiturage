@@ -1,18 +1,20 @@
 import React from 'react';
-import { View,Text, Image,StyleSheet } from 'react-native';
+import { View,Text, Image,StyleSheet, TouchableOpacity } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 // import { Container } from './styles';
 
 const ProfilJ = ({notification}) => {
-  const diplayNotif = notification > 0 ? <MaterialCommunityIcons name="bell" size={24} color="black" /> : ""
+  const diplayNotif = notification > 0 ?<TouchableOpacity><MaterialCommunityIcons name="bell" size={24} color="gray" /></TouchableOpacity>  : ""
   return (
     <View style={styles.container}>
       {diplayNotif}
-      <Image 
-        style={styles.profilImg}
-        source = {require("../../assets/profil.png")}
-      />
+      <TouchableOpacity>
+        <Image 
+          style={styles.profilImg}
+          source = {require("../../assets/profil.png")}
+        />
+      </TouchableOpacity>
     </View>
   );
 }

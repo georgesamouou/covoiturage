@@ -9,7 +9,7 @@ import Checkbox from 'expo-checkbox';
 export const RegistrationScreen = () => {
   const [isChecked, setChecked] = useState(false);
   return (
-    <View style={{flex:1, width: "100%"}}>
+    <View style={{flex:1, width: "100%",backgroundColor:"white"}}>
       <Text style={styles.login}>Sign In</Text>
       <View style={styles.block}>
         <View style={styles.container}>
@@ -39,7 +39,7 @@ export const RegistrationScreen = () => {
         <Pressable style={styles.btn}>
             <Text style={styles.btnTxt}>Sign In</Text>
         </Pressable>
-        <View style={{alignSelf:"center",flexDirection:'row',justifyContent:"space-between"}}>
+        {/* <View style={{alignSelf:"center",flexDirection:'row',justifyContent:"space-between"}}>
             <View style={{flexDirection:'row',}}>
                 <Checkbox
                     style={styles.checkbox}
@@ -51,7 +51,7 @@ export const RegistrationScreen = () => {
             </View>
             
             <Text style={styles.forget}>Already have an account?</Text>
-        </View>
+        </View> */}
         
         <View style={styles.social}>
             <FontAwesome
