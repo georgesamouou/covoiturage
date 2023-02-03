@@ -3,13 +3,13 @@ import { View,TextInput,StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 // import { Container } from './styles';
 
-const Search = () => {
+const Search = ({title}) => {
   return (
     <View style={styles.container}>
         <Ionicons name="search-outline" style = {styles.icon} size={24} color="black" />
         <TextInput
             style={styles.input}
-            placeholder="Search a trip"
+            placeholder={title}
         />
     </View>
   );
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
         backgroundColor:"#EBF1FD",
         height:45,
         position:"relative",
-        top:-15
+        top:-1
     },
     icon:{
         position:'relative',
