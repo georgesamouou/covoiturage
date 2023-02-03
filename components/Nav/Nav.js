@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { View,StyleSheet,Text, TouchableOpacity,Switch } from 'react-native';
+import { View,StyleSheet,Text, TouchableOpacity,Switch,ScrollView } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 
 // import { Container } from './styles';
@@ -13,7 +13,7 @@ const Nav = ({navigation}) => {
         setPlanner(value);
     }
     return (
-        <View>
+        <ScrollView style={styles.container}>
             
             <TouchableOpacity onPress={()=>navigation.navigate('main')} style={styles.block}>
                 <Text>List of my trips</Text>
@@ -28,7 +28,7 @@ const Nav = ({navigation}) => {
                 </View>
             </TouchableOpacity>
             {planner ?
-                <TouchableOpacity style={styles.block}>
+                <TouchableOpacity onPress={()=>navigation.navigate("cars")} style={styles.block}>
                     <Text>My cars</Text>
                     <View style={styles.icon}>
                         <Text style={styles.next}>></Text>
@@ -61,11 +61,15 @@ const Nav = ({navigation}) => {
             </View>
             
             <Text style={{textAlign:'center'}}>{planner ? `Connected as Planner` : 'Connected as user'}</Text>
-        </View>
+        </ScrollView>
     );
     }
 
 const styles = StyleSheet.create({
+    container:{
+        width:"90%",
+        alignSelf:'center'
+    },
     block:{
         flexDirection:'row',
         width:"90%",
@@ -83,7 +87,6 @@ const styles = StyleSheet.create({
         fontSize:20,
         width:22,
         height:22,
-        
     },
     next:{
         textAlignVertical:'center',
@@ -93,7 +96,6 @@ const styles = StyleSheet.create({
     switch:{
         alignSelf:"flex-start",
         color:'orange',
-        
     }
 });
 
