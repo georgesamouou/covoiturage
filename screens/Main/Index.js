@@ -4,12 +4,15 @@ import { StyleSheet, Text, View } from 'react-native';
 import Nav from '../../components/Nav/Nav';
 import HeaderMain from '../../components/Header/Header';
 
+
+
 export default function Index() {
   const [displayNav,setDisplayNav] = useState(false)
   return (
     <View style={styles.container}>
       <HeaderMain stDisplayNav = {setDisplayNav} displayNav={displayNav}/>
-      {displayNav ? <Nav/>:""}      
+      {displayNav ? <Nav/>:""}
+            
     </View>
   );
 }

@@ -10,6 +10,7 @@ import TripList from './screens/Trips/TripList';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { RegistrationScreen } from './screens/user/Register';
+import SearchPage from './screens/SearchPage/SearchPage';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,11 +21,12 @@ export default function App() {
         screenOptions={{
           headerShown: false
         }}
-        initialRouteName="login"
+        initialRouteName="search"
       >
+        <Stack.Screen name="search" component={SearchPage}/>
         <Stack.Screen name="login" component={LoginScreen} />
         <Stack.Screen name="signup" component={RegistrationScreen} />
-        <Stack.Screen name="main" component={Index} />
+        <Stack.Screen name="main" component={TripList} />
       </Stack.Navigator>
       
     </NavigationContainer>

@@ -4,7 +4,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 
 // import { Container } from './styles';
 
-const Nav = (props) => {
+const Nav = ({navigation}) => {
     const [planner,setPlanner] = useState(false);
     /* const diplayPlanner = planner === 0 ?<TouchableOpacity>
 
@@ -15,7 +15,7 @@ const Nav = (props) => {
     return (
         <View>
             
-            <TouchableOpacity style={styles.block}>
+            <TouchableOpacity onPress={()=>navigation.navigate('main')} style={styles.block}>
                 <Text>List of my trips</Text>
                 <View style={styles.icon}>
                     <Text style={styles.next}>></Text>

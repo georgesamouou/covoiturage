@@ -6,25 +6,38 @@ import { Ionicons } from '@expo/vector-icons';
 const Search = () => {
   return (
     <View style={styles.container}>
+        <Ionicons name="search-outline" style = {styles.icon} size={24} color="black" />
         <TextInput
             style={styles.input}
             placeholder="Search a trip"
         />
-        <Ionicons name="search-outline" style = {styles.icon} size={24} color="black" />
     </View>
   );
 }
 const styles = StyleSheet.create({
     container:{
-        flexDirection: 'row'
+        flexDirection: 'row',
+        width:"80%",
+        borderColor:"white",
+        borderWidth:2,
+        alignSelf:"center",
+        borderRadius:300,
+        backgroundColor:"#EBF1FD",
+        height:45,
+        position:"relative",
+        top:-15
     },
     icon:{
-        position:'relative'
+        position:'relative',
+        margin:10,
+        color:'gray'
     },
     input:{
         borderRadius:20,
         height:30,
-        backgroundColor:"#EBF1FD"
+        backgroundColor:"#EBF1FD",
+        textAlignVertical:"center",
+        marginTop:5
     }
 })
 export default Search;

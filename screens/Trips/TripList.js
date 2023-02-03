@@ -19,7 +19,7 @@ const dummyArray = [
     {id:"10",departure:"Douala - Bonapri",destination:"Yaounde - Melen",prix:"5000F",profil:"",date:"12/12/2022",car:"BMW (37A6-58039)"},
    
   ];
-const TripList = () => {
+const TripList = ({navigation}) => {
     const [displayNav,setDisplayNav] = useState(false)
     const [listItems, setListItems] = useState(dummyArray);
     const translateX = useRef(new Animated.Value(Dimensions.get("window").height)).current 
@@ -48,7 +48,7 @@ const TripList = () => {
         <View style={styles.container}>
             <View style={styles.container}>
                 <HeaderMain stDisplayNav = {setDisplayNav} displayNav={displayNav}/>
-                {displayNav ? <Nav/>:""}      
+                {displayNav ? <Nav navigation={navigation}/>:""}      
             </View>
             <Text style={styles.txt}>List of my trips</Text>
             <FlatList
