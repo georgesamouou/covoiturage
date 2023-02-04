@@ -4,12 +4,12 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 // import { Container } from './styles';
 
-const ProfilJ = ({notification}) => {
+const ProfilJ = ({notification,navigation}) => {
   const diplayNotif = notification > 0 ?<TouchableOpacity><MaterialCommunityIcons name="bell" size={24} color="gray" /></TouchableOpacity>  : ""
   return (
     <View style={styles.container}>
       {diplayNotif}
-      <TouchableOpacity>
+      <TouchableOpacity onPress={()=>navigation.navigate("parameters")}>
         <Image 
           style={styles.profilImg}
           source = {require("../../assets/profil.png")}

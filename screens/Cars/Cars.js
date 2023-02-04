@@ -6,19 +6,19 @@ import Search from '../../components/Search/Search';
 
 // import { Container } from './styles';
 
-const SearchPage = ({navigation}) => {
+const Cars = ({navigation}) => {
     const [displayNav,setDisplayNav] = useState(false)
     return (
         <View>
             <View style={styles.container}>
-                <HeaderMain navigation={navigation} stDisplayNav = {setDisplayNav} displayNav={displayNav}/>
+                <HeaderMain stDisplayNav = {setDisplayNav} displayNav={displayNav}/>
                 {displayNav ? <Nav navigation={navigation} />:""} 
-                <Search title="search trip"/>
+                <Search title="search cars"/>
                 <ScrollView>
                     <View style={styles.imgContainer}>
                         <Image 
                             style={styles.img}
-                            source = {require("../../assets/search.png")}
+                            source = {require("../../assets/car.png")}
                         />
                     </View>
                     <Text style={{marginLeft:32}}>Available</Text>
@@ -36,6 +36,8 @@ const styles = StyleSheet.create({
     img:{
         alignSelf:"center",
         width:"100%",
+        marginBottom:5,
+        marginTop:10,
     },
     imgContainer:{
         width:"80%",
@@ -43,4 +45,4 @@ const styles = StyleSheet.create({
 
     }
 })
-export default SearchPage;
+export default Cars;

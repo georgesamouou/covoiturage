@@ -5,12 +5,12 @@ import { Octicons,MaterialCommunityIcons } from '@expo/vector-icons';
 
 // import { Container } from './styles';
 
-const HeaderMain = (props) => {
+const HeaderMain = ({displayNav,navigation,stDisplayNav}) => {
   const handleDisplayNav = () => {
-    if (props.displayNav) {
-      props.stDisplayNav(!props.displayNav)
+    if (displayNav) {
+      stDisplayNav(!displayNav)
     }else{
-      props.stDisplayNav(!props.displayNav)
+      stDisplayNav(!displayNav)
     }
     
   }
@@ -19,7 +19,7 @@ const HeaderMain = (props) => {
         <TouchableOpacity onPress={handleDisplayNav} style={styles.btn}>
           <Octicons name="three-bars" style={styles.icon} size={24} color="black" />
         </TouchableOpacity>
-        <Profil notification = {1}/>
+        <Profil navigation={navigation}  notification = {1}/>
     </View>
   );
 }
