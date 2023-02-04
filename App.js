@@ -11,6 +11,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { RegistrationScreen } from './screens/user/Register';
 import SearchPage from './screens/SearchPage/SearchPage';
+import Parameter from './screens/Parameter/Parameter';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,11 +22,12 @@ export default function App() {
         screenOptions={{
           headerShown: false
         }}
-        initialRouteName="search"
-      >
-        <Stack.Screen name="search" component={SearchPage}/>
+        initialRouteName="parameter"
+      > 
+        <Stack.Screen name="parameter" component={Parameter}/>
         <Stack.Screen name="login" component={LoginScreen} />
         <Stack.Screen name="signup" component={RegistrationScreen} />
+        <Stack.Screen name="search" component={SearchPage}/>
         <Stack.Screen name="main" component={TripList} />
       </Stack.Navigator>
       
