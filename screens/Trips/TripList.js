@@ -48,7 +48,7 @@ const TripList = ({navigation}) => {
         <View style={styles.container}>
             <View style={styles.container}>
                 <HeaderMain navigation={navigation} stDisplayNav = {setDisplayNav} displayNav={displayNav}/>
-                {displayNav ? <Nav navigation={navigation}/>:""}      
+                {displayNav ? <Nav stDisplayNav = {setDisplayNav} navigation={navigation}/>:""}      
             </View>
             <Text style={styles.txt}>List of my trips</Text>
             <FlatList

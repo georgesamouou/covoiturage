@@ -13,6 +13,7 @@ import { RegistrationScreen } from './screens/user/Register';
 import SearchPage from './screens/SearchPage/SearchPage';
 import Cars from './screens/Cars/Cars';
 import Parameters from './screens/Parameters/Parameters';
+import Alerts from './screens/Alerts/Alerts';
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +32,9 @@ export default function App() {
         <Stack.Screen name="cars" component={Cars}/>
         <Stack.Screen name="parameters" component={Parameters} />
         <Stack.Screen name="main" component={TripList} />
+        <Stack.Screen name="alerts" component={Alerts} />
+
+        
       </Stack.Navigator>
       
     </NavigationContainer>

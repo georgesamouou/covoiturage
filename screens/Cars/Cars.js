@@ -11,8 +11,8 @@ const Cars = ({navigation}) => {
     return (
         <View>
             <View style={styles.container}>
-                <HeaderMain stDisplayNav = {setDisplayNav} displayNav={displayNav}/>
-                {displayNav ? <Nav navigation={navigation} />:""} 
+                <HeaderMain navigation={navigation} stDisplayNav = {setDisplayNav} displayNav={displayNav}/>
+                {displayNav ? <Nav stDisplayNav = {setDisplayNav} navigation={navigation} />:""} 
                 <Search title="search cars"/>
                 <ScrollView>
                     <View style={styles.imgContainer}>

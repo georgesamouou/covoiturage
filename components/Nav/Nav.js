@@ -4,7 +4,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 
 // import { Container } from './styles';
 
-const Nav = ({navigation}) => {
+const Nav = ({navigation,stDisplayNav}) => {
     const [planner,setPlanner] = useState(false);
     /* const diplayPlanner = planner === 0 ?<TouchableOpacity>
 
@@ -15,7 +15,7 @@ const Nav = ({navigation}) => {
     return (
         <ScrollView style={styles.container}>
             
-            <TouchableOpacity onPress={()=>navigation.navigate('main')} style={styles.block}>
+            <TouchableOpacity onPress={()=>{stDisplayNav(false);navigation.navigate('main');}} style={styles.block}>
                 <Text>List of my trips</Text>
                 <View style={styles.icon}>
                     <Text style={styles.next}>></Text>
@@ -28,7 +28,7 @@ const Nav = ({navigation}) => {
                 </View>
             </TouchableOpacity>
             {planner ?
-                <TouchableOpacity onPress={()=>navigation.navigate("cars")} style={styles.block}>
+                <TouchableOpacity onPress={()=>{stDisplayNav(false);navigation.navigate("cars")}} style={styles.block}>
                     <Text>My cars</Text>
                     <View style={styles.icon}>
                         <Text style={styles.next}>></Text>
@@ -37,7 +37,7 @@ const Nav = ({navigation}) => {
                 : ""
             }
             {planner ?
-                <TouchableOpacity style={styles.block}>
+                <TouchableOpacity onPress={()=>{stDisplayNav(false);}} style={styles.block}>
                     <Text>My drivers</Text>
                     <View style={styles.icon}>
                         <Text style={styles.next}>></Text>
@@ -45,7 +45,7 @@ const Nav = ({navigation}) => {
                 </TouchableOpacity>
                 : ""
             }
-            <TouchableOpacity style={styles.block}>
+            <TouchableOpacity onPress={()=>{stDisplayNav(false);navigation.navigate("alerts")}} style={styles.block}>
                 <Text>Alerts</Text>
                 <View style={styles.icon}>
                     <Text style={styles.next}>></Text>

@@ -12,7 +12,7 @@ const SearchPage = ({navigation}) => {
         <View>
             <View style={styles.container}>
                 <HeaderMain navigation={navigation} stDisplayNav = {setDisplayNav} displayNav={displayNav}/>
-                {displayNav ? <Nav navigation={navigation} />:""} 
+                {displayNav ? <Nav stDisplayNav = {setDisplayNav} navigation={navigation} />:""} 
                 <Search title="search trip"/>
                 <ScrollView>
                     <View style={styles.imgContainer}>

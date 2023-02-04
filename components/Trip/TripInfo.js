@@ -1,5 +1,5 @@
 import React from 'react';
-import { View,Text,StyleSheet, TouchableOpacity } from 'react-native';
+import { View,Text,StyleSheet, TouchableOpacity,Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import ProfilJ from '../ProfilJ/ProfilJ';
 
@@ -28,7 +28,10 @@ const TripInfo = ({departure,prix,destination,car}) => {
         <View>
             <Text style={styles.prix}>{prix}</Text>
             <View  style={{alignSelf:"center"}}>
-                <ProfilJ/>
+                <Image 
+                    style={styles.profilImg}
+                    source = {require("../../assets/profil.png")}
+                />
             </View>
             <Text style={{color:"gray",fontSize:10,textAlign:"center"}}>{car}</Text>
         </View>
@@ -79,7 +82,13 @@ const styles = StyleSheet.create({
         color:"#FF7D4B",
         textAlign:"center",
         marginTop:10
-    }
+    },
+    profilImg:{
+        width:30,
+        height:30,
+        borderRadius:100000000000,
+        marginLeft:10
+      }
 });
 
 export default TripInfo;
